@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Clock App</title>
+    <title>Elegant Flask Clock App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
 <body>
-    <h1>Current UTC Time</h1>
-    <div id="clock" style="font-size: 2em;">{{ current_time }}</div>
+    <div class="clock-container">
+        <h1>Current Time</h1>
+        <div id="clock">{{ current_time }}</div>
+    </div>
 </body>
 </html>
