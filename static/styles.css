@@ -1,6 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -28,4 +29,18 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+#container-id {
+    font-weight: bold;
+    color: #4ecdc4;
 }
