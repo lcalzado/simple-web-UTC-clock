@@ -6,7 +6,7 @@ import os
 clock = Flask(__name__)
 
 current_time = ""
-container_id = os.environ.get('HOSTNAME', 'Not in a container')[:12]
+container_id = os.environ.get('HOSTNAME', 'Not in a container')
 
 def update_time():
     global current_time
