@@ -18,9 +18,9 @@ This app shows the Coordinated Universal Time (UTC) using python, flask and dock
         styles.css
 ```
 
-### adding the dockerfile
+### adding the Dockerfile
 
-I added 2 more files to this structure the requirements file and the dockerfile.
+I added 2 more files to this structure the requirements file and the Dockerfile.
 
 1. The requirements.txt file have all dependencues declarations:
 ```
@@ -48,3 +48,17 @@ EXPOSE 5000
 #Run the application when the container starts.
 CMD ["python3", "clock.py"]
 ```
+
+**Final structure**
+
+The final directory structure is as follows:
+/simple-web-UTC-clock
+    requirements.txt
+    Dockerfile
+    clock.py
+    /templates
+        index.html
+    /static
+        script.js
+        styles.css
+
