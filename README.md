@@ -1,5 +1,8 @@
 # Simple Web UTC Clock
 
+## Pre-requisites
+Docker installed on your system
+
 ## Introductions
 Here I share a simple web app that I created, a UTC clock.But the 
 focus of this repository is how to build and deploy it.
@@ -18,11 +21,11 @@ This app shows the Coordinated Universal Time (UTC) using python, flask and dock
         styles.css
 ```
 
-### adding the Dockerfile
+### Adding the Dockerfile
 
 I added 2 more files to this structure the requirements file and the Dockerfile.
 
-1. The requirements.txt file have all dependencues declarations:
+1. The requirements.txt file have all dependencies declarations:
 ```
 Flask
 ```
@@ -52,6 +55,7 @@ CMD ["python3", "clock.py"]
 **Final structure**
 
 The final directory structure is as follows:
+```
 /simple-web-UTC-clock
     requirements.txt
     Dockerfile
@@ -61,4 +65,14 @@ The final directory structure is as follows:
     /static
         script.js
         styles.css
+```
 
+**Creating the image and running an instance**
+
+To create an image of the app run the command inside the the project directory (/simple-web-UTC-clock):
+```
+sudo docker build -t [image-name] .
+```
+In my case I used:
+```
+sudo docker build -t lcalzado/simple-web-clock .
