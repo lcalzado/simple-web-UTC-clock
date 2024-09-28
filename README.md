@@ -3,12 +3,11 @@
 ## Pre-requisites
 Docker installed on your system
 
-## Introductions
-Here I share a simple web app that I created, a UTC clock.But the 
-focus of this repository is how to build and deploy it.
+## Introduction
+Here I share a simple web app that I created, a UTC clock. But the focus of this repository is how to build and deploy it.
 
 ### Application description
-This app shows the Coordinated Universal Time (UTC) using python, flask and dockers.
+This app shows the Coordinated Universal Time (UTC) using Python, Flask, and Docker.
 
 **This is the flask structure:**
 ```
@@ -23,26 +22,26 @@ This app shows the Coordinated Universal Time (UTC) using python, flask and dock
 
 ### Adding the Dockerfile
 
-I added 2 more files to this structure the requirements file and the Dockerfile.
+I added two more files to this structure: the requirements file and the Dockerfile.
 
-1. The requirements.txt file have all dependencies declarations:
+1. The requirements.txt file has all dependency declarations:
 ```
 Flask
 ```
 
-2. The dockerfile contains all the steps to be executed each time we create an instance of the built image:
+2. The Dockerfile contains all the steps to be executed each time we create an instance of the built image:
 
 ```
 #Base image
 FROM python:3.12-alpine
 
-#Set the working dir in the container
+#Set the working directory in the container
 WORKDIR /clock
 
-#Copy the content of the current dir into the container at /clock
+#Copy the content of the current directory into the container at /clock
 COPY . /clock/
 
-#Install dependencies defined on the requirements file
+#Install dependencies defined in the requirements file
 RUN pip install --no-cache-dir -r requirements.txt
 
 #Make the container listen on port 5000
@@ -69,30 +68,29 @@ The final directory structure is as follows:
 
 **Creating the image and running an instance**
 
-To create an image of the app run the command inside the the project directory (/simple-web-UTC-clock):
+To create an image of the app, run the command inside the project directory (/simple-web-UTC-clock):
 ```
 sudo docker build -t [image-name] .
 ```
-In my case I used:
+In my case, I used:
 ```
 sudo docker build -t lcalzado/simple-web-clock .
 
-To run an instance of you app use the command:
+To run an instance of the app, use the command:
 ```
 docker run -d -p 80:5000 --name web-clock lcalzado/simple-web-clock
 ```
-This command create a container named web-clock mapping the port 80 in the host to the 5000 port
-in the container on detach mode.
+This command creates a container named web-clock, mapping port 80 on the host to port 5000 in the container in detached mode.
 ```
 
 **Extra**
 
-If you want to run an instace that shows you local time insted of the UTC you can use the following command:
+If you want to run an instance that shows your local time instead of UTC, you can use the following command:
 ```
 docker run -d -e TZ=$(cat /etc/timezone) -p 5000:5000 --name web-clock-local lcalzado/web-clock
 ```
-Here I add an extra option "-e" which stands for enviroment variable.
-It adds your localhost timezone into the container timezone. 
+Here I add an extra option "-e" which stands for environment variable. It adds your localhost timezone to the container timezone.
 
 
-I hope this have been informative for you and I'd like to thank you for reading it.
+I hope this has been informative for you, and I'd like to thank you for reading it.
+
