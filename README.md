@@ -18,3 +18,14 @@ This app shows the Coordinated Universal Time (UTC) using python, flask and dock
         styles.css
 ```
 
+### adding the dockerfile
+
+I added 2 more files to this structure the requirements file and the dockerfile.
+
+1. The requirements.txt file have all dependencues declarations:
+```
+Flask
+```
+
+2. The dockerfile contains all the steps to be executed each time we create an instance of the built image:
+```
